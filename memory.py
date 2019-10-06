@@ -9,8 +9,8 @@ This script runs the memory game assigned by the KPCB Engineering Application
 
 """
 __program__ = 'Memory Game'
-__author__  = 'Alex Ruber'
-__version__ = '0.2'
+__author__  = 'Mihai Ruber'
+__version__ = '0.3'
 
 # Import Declarations #
 import os
@@ -22,7 +22,7 @@ from datetime import datetime
 
 # Methods #
 
-#Define Boards - Hidden and Answer
+#Define Boards 
 def createBoard():
 	# Global Variables
 	global board
@@ -36,6 +36,7 @@ def createBoard():
 	random.shuffle(answer)
 	answer = [answer[:4], answer[4:8], answer[8:12], answer[12:]]
 	
+# Start Game
 def startGame():
 	# Define Global Start Time
 	global startTime
@@ -45,7 +46,7 @@ def startGame():
 	while pickTile():
 		pass
 
-# User picks the tile coordinate
+# Pick Tile: Handle logic for picking a specific tile 
 def pickTile():
 	# Do not allow First and Second pick to be the same
 	while True:
@@ -107,8 +108,8 @@ def pickTile():
 		else:
 			print("Bye, thanks for playing!")
 
-# Updates and shows the board
-# Paramater: Takes in arbitrary number of picks, either one or two
+# Updates and display the board 
+# Parameter: Takes in arbitrary number of picks, either one or two
 def updateAndShowBoard(*picks):
 	for row in range(len(answer)):
 		for column in range(len(answer[0])):
